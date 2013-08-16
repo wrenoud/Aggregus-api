@@ -1,7 +1,7 @@
 [User](./User)
 ----------------------------------------------------------------------
 
-** [Model](./User/Model.md) [API](./User/API.md) **
+**[Model](./User/Model.md) | [API](./User/API.md)**
 
 * [Create User](./User/API.md#create-user): `POST /api/user`
 * [Retrieve User](./User/API.md#retrieve-user): `GET /api/user/{User ID}`
@@ -12,7 +12,7 @@
 [Experience](./Experience)
 ----------------------------------------------------------------------
 
-** [Model](./Experience/Model.md) [API](./Experience/API.md) **
+**[Model](./Experience/Model.md) | [API](./Experience/API.md)**
 
 * [Create Experience](./Experience/API.md#create-experience): `POST /api/experience`
 * [Retrieve Experience](./Experience/API.md#retrieve-experience): `GET /api/experience/{Experience ID}`
@@ -22,7 +22,7 @@
 [Booking](./Booking)
 ----------------------------------------------------------------------
 
-** [Model](./Booking/Model.md) [API](./Booking/API.md) **
+**[Model](./Booking/Model.md) | [API](./Booking/API.md)**
 
 * [Create Booking](./Booking/API.md#create-booking): `POST /api/booking`
 * [Retrieve Booking](./Booking/API.md#retrieve-booking): `GET /api/booking/{Booking ID}`
