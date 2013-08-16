@@ -5,8 +5,7 @@
 
 Create Experience:
 -----------------------------------------
-
-** Route: **  `POST /api/experience`
+**Route:**  `POST /api/experience`
 
 Description
 
@@ -20,7 +19,7 @@ Description
 
 Retrieve Experience:
 ----------------------------------------------------------
-** Route: ** `GET /api/experience/{Exp. ID}`
+**Route:** `GET /api/experience/{Exp. ID}`
 
 Description
 
@@ -35,7 +34,7 @@ Description
 
 Update Experience:
 ---------------------------------------------------------
-** Route: ** `POST /api/experience/{Exp. ID}`
+**Route:** `POST /api/experience/{Exp. ID}`
 
 Description
 
@@ -50,7 +49,7 @@ Description
 
 Delete Experience:
 --------------------------------------------------------
-** Route: ** `DEL /api/experience/{Exp. ID}`
+**Route:** `DEL /api/experience/{Exp. ID}`
 
 Description
 
