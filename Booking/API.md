@@ -1,11 +1,11 @@
-* Create Booking: `POST /api/booking`
-* Retrieve Booking: `GET /api/booking/{Exp. ID}`
-* Update Booking: `POST /api/booking/{Exp. ID}`
-* Delete Booking: `DEL /api/booking/{Exp. ID}`
+* [Create Booking](#create-booking): `POST /api/booking`
+* [Retrieve Booking](#retrieve-booking): `GET /api/booking/{Exp. ID}`
+* [Update Booking](#update-booking): `POST /api/booking/{Exp. ID}`
+* [Delete Booking](#delete-booking): `DEL /api/booking/{Exp. ID}`
 
 Create Booking:
 -----------------------------------------
-** Route: **  `POST /api/booking`
+**Route:**  `POST /api/booking`
 
 Description
 
@@ -19,7 +19,7 @@ Description
 
 Retrieve Booking:
 ----------------------------------------------------------
-** Route: ** `GET /api/booking/{Exp. ID}`
+**Route:** `GET /api/booking/{Exp. ID}`
 
 Description
 
@@ -34,7 +34,7 @@ Description
 
 Update Booking:
 ---------------------------------------------------------
-** Route: ** `POST /api/booking/{Exp. ID}`
+**Route:** `POST /api/booking/{Exp. ID}`
 
 Description
 
@@ -49,7 +49,7 @@ Description
 
 Delete Booking:
 --------------------------------------------------------
-** Route: ** `DEL /api/booking/{Exp. ID}`
+**Route:** `DEL /api/booking/{Exp. ID}`
 
 Description
 
