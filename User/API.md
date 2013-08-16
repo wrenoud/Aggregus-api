@@ -1,7 +1,7 @@
-* [Create User][]: `POST /api/user`
-* [Retrieve User][]: `GET /api/user/{User ID}`
-* [Update User][]: `POST /api/user/{User ID}`
-* [Delete User][]: `DEL /api/user/{User ID}`
+* [Create User](#Create-User): `POST /api/user`
+* [Retrieve User](#Retrieve-User): `GET /api/user/{User ID}`
+* [Update User](#Update-User): `POST /api/user/{User ID}`
+* [Delete User](#Delete-User): `DEL /api/user/{User ID}`
 
 
 Create User:
