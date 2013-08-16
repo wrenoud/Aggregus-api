@@ -4,10 +4,7 @@
 * [Delete User](#Delete): `DEL /api/user/{User ID}`
 
 
-
-<a id="Create"></a>
-
-Create User: `POST /api/user`
+Create User: `POST /api/user` [Create]
 -----------------------------
 
 Creates user object, only fails on email conflict, and returns populated user object
