@@ -1,9 +1,11 @@
-* [Create User][Create] `POST /api/user`
-* Retrieve User: `GET /api/user/{User ID}`
-* Update User: `POST /api/user/{User ID}`
-* Delete User: `DEL /api/user/{User ID}`
+* [Create User](#Create): `POST /api/user`
+* [Retrieve User](#Retrieve): `GET /api/user/{User ID}`
+* [Update User](#Update): `POST /api/user/{User ID}`
+* [Delete User](#Delete): `DEL /api/user/{User ID}`
 
 
+
+<a id="Create"></a>
 
 Create User: `POST /api/user`
 -----------------------------
@@ -19,7 +21,7 @@ Creates user object, only fails on email conflict, and returns populated user ob
 > Populated [User](Model.md) model
 
 
-Retrieve User: `GET /api/user/{User ID}`
+<a id="Retrieve"></a>Retrieve User: `GET /api/user/{User ID}`
 ----------------------------------------
 
 Retrieves user object, note results dependant on auth status.
@@ -45,7 +47,7 @@ Retrieves user object, note results dependant on auth status.
 >     {_details: 0, password: 0, financial: 0, contact: 0, location: 0}
 
 
-Update User: `POST /api/user/{User ID}`
+<a id="Update"></a>Update User: `POST /api/user/{User ID}`
 ---------------------------------------
 
 Updates user info.
@@ -74,9 +76,7 @@ Only editable by authenticated user with same id, note only admin can update bal
 > Populated [User](Model.md) model (as per GET)
 
 
-[Create]: #asdf
-
-Delete User: `DEL /api/user/{User ID}`
+<a id="Delete"></a>Delete User: `DEL /api/user/{User ID}`
 --------------------------------------
 
 Deletes a user account, which is to say flips the _detail.deleted flag
