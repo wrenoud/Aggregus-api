@@ -1,7 +1,8 @@
-* Create User: `POST /api/user`
+* [Create User][Create] `POST /api/user`
 * Retrieve User: `GET /api/user/{User ID}`
 * Update User: `POST /api/user/{User ID}`
 * Delete User: `DEL /api/user/{User ID}`
+
 
 
 Create User: `POST /api/user`
@@ -72,6 +73,8 @@ Only editable by authenticated user with same id, note only admin can update bal
 
 > Populated [User](Model.md) model (as per GET)
 
+
+[Create]: #asdf
 
 Delete User: `DEL /api/user/{User ID}`
 --------------------------------------
