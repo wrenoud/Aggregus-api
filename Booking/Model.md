@@ -4,7 +4,7 @@
             date_created: String,
             confirmed: Boolean,
             charged: Boolean,
-            charge_token: String
+            charge_token: String // can be 'tok_' or 'cus_'
         },
         booking_details: {
             date_booked: {

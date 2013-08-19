@@ -2,7 +2,17 @@
         _id: String,
         _details: {
             date_created: String,
-            approved: Boolean
+            published: Boolean,
+            approved: Boolean,
+            booked: Boolean,
+            archived: Boolean,
+            deleted: Boolean
+        },
+        _owners: {
+            host: {
+                type: String, 
+                ref: 'User'
+            },
         },
         name: String,
         description: String,
@@ -27,10 +37,6 @@
             cover: String,
             profile: String,
             gallery: String
-        },
-        creator: {
-            type: String, 
-            ref: 'User'
         },
         location: {
             normal: {

@@ -19,7 +19,7 @@ Creates user object, only fails on email conflict, and returns populated user ob
 > Populated [User](Model.md) model
 
 
-<a name="Retrieve"></a>Retrieve User:
+Retrieve User:
 ---------------------------------------------------------------
 ** Route: ** `GET /api/user/{User ID}`
 
@@ -80,8 +80,13 @@ Delete User:
 --------------------------------------
 ** Route: **  `DEL /api/user/{User ID}`
 
-Deletes a user account, which is to say flips the _detail.deleted flag
+Deletes (hides) a user account, which is to say flips the `_detail.deleted` flag
 
 **Authentication:** User
 
 **Private:** Yes
+
+**Server duties:**
+
+>* Delete experiences
+>* Delete bookings

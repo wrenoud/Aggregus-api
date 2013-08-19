@@ -1,6 +1,7 @@
 * [Create Booking](#create-booking): `POST /api/booking`
 * [Retrieve Booking](#retrieve-booking): `GET /api/booking/{Exp. ID}`
 * [Update Booking](#update-booking): `POST /api/booking/{Exp. ID}`
+* [Charge Booking](#charge-booking): `POST /api/booking/{Exp. ID}/charge`
 * [Delete Booking](#delete-booking): `DEL /api/booking/{Exp. ID}`
 
 Create Booking:
@@ -15,6 +16,8 @@ Description
 
 **Request:**
 
+**Server Action:**
+
 **Response:**
 
 Retrieve Booking:
@@ -28,6 +31,8 @@ Description
 **Private:**
 
 **Request:**
+
+**Server Action:**
 
 **Response:**
 
@@ -44,6 +49,25 @@ Description
 
 **Request:**
 
+**Server Action:**
+
+**Response:**
+
+
+Charge Booking:
+---------------------------------------------------------
+**Route:** `POST /api/booking/{Exp. ID}/charge`
+
+Description
+
+**Authentication:**
+
+**Private:**
+
+**Request:**
+
+**Server Action:**
+
 **Response:**
 
 
@@ -58,5 +82,7 @@ Description
 **Private:**
 
 **Request:**
+
+**Server Action:**
 
 **Response:**
