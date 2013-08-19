@@ -1,7 +1,7 @@
 * [Create Experience](#create-experience): `POST /api/experience`
 * [Retrieve Experience](#retrieve-experience): `GET /api/experience/{Exp. ID}`
 * [Update Experience](#update-experience): `POST /api/experience/{Exp. ID}`
-* [Publish Experience](#update-experience): `POST /api/experience/{Exp. ID}/publish`
+* [Publish Experience](#publish-experience): `POST /api/experience/{Exp. ID}/publish`
 * [Approve Experience](#approve-experience): `POST /api/experience/{Exp. ID}/approve`
 * [Archive Experience](#archive-experience): `POST /api/experience/{Exp. ID}/archive`
 * [Delete Experience](#delete-experience): `DEL /api/experience/{Exp. ID}`
@@ -18,6 +18,8 @@ State List
 
 ### New
 
+This is a brand new experience that a _Host_ can continue to _Update_ until they're ready to _Publish_ the experience.
+
     _details: {
         published: false,
         approved: false,
@@ -26,9 +28,15 @@ State List
         deleted: false
     }
 
-Can transition to [Published](#published) or [Deleted](#deleted)
+Can transition to:
+
+* [New](#new) via [Update Experience](#update-experience) (Host)
+* [Published](#published) via [Publish Experience](#publish-experience) (Host)
+* [Deleted](#deleted) via [Delete Experience](#delete-experience) (Host)
 
 ### Published
+
+This is an Experience that the host feels ready to share on the website, and is pending approval.
 
     _details: {
         published: true,
@@ -38,9 +46,15 @@ Can transition to [Published](#published) or [Deleted](#deleted)
         deleted: false
     }
 
-Can transition to [New](#new), [Approved](#approved) or [Deleted](#deleted)
+Can transition to:
+
+* [New](#new) via [Update Experience](#update-experience) (Host)
+* [Approved](#approved) via [Approve Experience](#approve-experience) (Admin)
+* [Deleted](#deleted) via [Delete Experience](#delete-experience) (Host)
 
 ### Unpublished
+
+This is an approved Experience that the _Host_ has withdrawn from the marketplace.
 
     _details: {
         published: false,
@@ -50,9 +64,17 @@ Can transition to [New](#new), [Approved](#approved) or [Deleted](#deleted)
         deleted: false
     }
 
-Can transition to [New](#new) if booked is false, [Approved](#approved) if booked is false, [Booked](#booked) if booked is true, [Archived](#archived) if booking is true, or [Deleted](#deleted) if booked is false.
+Can transition to:
+
+* [New](#new) if booked is false,
+* [Approved](#approved) if booked is false,
+* [Booked](#booked) if booked is true,
+* [Archived](#archived) if booking is true
+* [Deleted](#deleted) if booked is false.
 
 ### Approved
+
+This is an approved Experience that is visible in the marketplace.
 
     _details: {
         published: true,
