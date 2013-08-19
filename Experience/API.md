@@ -1,4 +1,4 @@
-![Experience workflow](./Eperience.png)
+![Experience workflow](https://raw.github.com/wrenoud/Aggregus-api/master/Experience/Experience.png)
 
 * [Create Experience](#create-experience): `POST /api/experience`
 * [Retrieve Experience](#retrieve-experience): `GET /api/experience/{Exp. ID}`
