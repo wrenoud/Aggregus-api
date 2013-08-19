@@ -13,12 +13,20 @@ Workflow
 ![Experience workflow](https://raw.github.com/wrenoud/Aggregus-api/master/Experience/Experience.png)
 
 
-State List
+Model States
 ----------------------------------------------------------------------
+
+* **[New](#new)**: This is an _Experience_ that a _Host_ can continue to _Update_ until they're ready to _Publish_ or _Delete_.
+* **[Published](#published)**: This is an _Experience_ that the _Host_ feels ready to share on the website, and is pending _Approval_.
+* **[Approved](#approved)**: This is an _Experience_ that is visible in the marketplace that has never been _Booked_.
+* **[Booked](#booked)**: This is an _Experience_ that has been _Booked_ previously and is visible in the marketplace.
+* **[Withdrawn](#withdrawn)**: This is an _Approved_ _Experience_ that the _Host_ has withdrawn from the marketplace.
+* **[Archived](#archived)**: This is an _Approved_ and _Booked_ _Experience_ which has been permanently removed from the marketplace and from the _Hosts_ dashboard.
+* **[Deleted](#Deleted)**: This is an _Experience_ which was never _Booked_ which has been permanently removed from the marketplace and the _Hosts_ dashboard.
 
 ### New
 
-This is a brand new experience that a _Host_ can continue to _Update_ until they're ready to _Publish_ the experience.
+This is an _Experience_ that a _Host_ can continue to _Update_ until they're ready to _Publish_ or _Delete_.
 
     _details: {
         published: false,
@@ -36,7 +44,7 @@ Can transition to:
 
 ### Published
 
-This is an Experience that the host feels ready to share on the website, and is pending approval.
+This is an _Experience_ that the _Host_ feels ready to share on the website, and is pending _Approval_. This can still be edited but will need to be _Published_ after an _Update_.
 
     _details: {
         published: true,
@@ -52,9 +60,50 @@ Can transition to:
 * [Approved](#approved) via [Approve Experience](#approve-experience) (Admin)
 * [Deleted](#deleted) via [Delete Experience](#delete-experience) (Host)
 
-### Unpublished
 
-This is an approved Experience that the _Host_ has withdrawn from the marketplace.
+### Approved
+
+This is an _Experience_ that is visible in the marketplace that has never been _Booked_.
+
+    _details: {
+        published: true,
+        approved: true,
+        booked: false,
+        archived: false,
+        deleted: false
+    }
+
+Can transition to:
+
+* [New](#new) via [Update Experience](#update-experience) (Host)
+* [Published](#published) via [Approve Experience](#approve-experience) (Admin) 
+* [Withdrawn](#withdrawn) via [Publish Experience](#publish-experience) (Host)
+* [Booked](#booked) via [Create Booking](../Booking/API.md#create-booking) (Host)
+* [Deleted](#deleted) via [Delete Experience](#delete-experience) (Host)
+
+
+### Booked
+
+This is an _Experience_ that has been _Booked_ previously and is visible in the marketplace.
+
+    _details: {
+        published: true,
+        approved: true,
+        booked: true,
+        archived: false,
+        deleted: false
+    }
+
+Can transition to:
+
+* [Withdrawn](#withdrawn) via [Publish Experience](#publish-experience) (Host)
+* [Archived](#archived) via [Archive Experience](#archive-experience) (Host)
+* [Archived](#archived) via [Update Experience](#update-experience) (Host) _Note_ that this forces a [Create Experience](#create-experience) and will return a model with a _new_ id.
+
+
+### Withdrawn
+
+This is an _Approved_ _Experience_ that the _Host_ has withdrawn from the marketplace. Available transitions are dependant on the _Booked_ state.
 
     _details: {
         published: false,
@@ -66,39 +115,21 @@ This is an approved Experience that the _Host_ has withdrawn from the marketplac
 
 Can transition to:
 
-* [New](#new) if booked is false,
-* [Approved](#approved) if booked is false,
-* [Booked](#booked) if booked is true,
-* [Archived](#archived) if booking is true
-* [Deleted](#deleted) if booked is false.
+> If `booked: false`
+>
+>* [New](#new) via [Update Experience](#update-experience) (Host)
+>* [Approved](#approved) via [Publish Experience](#publish-experience) (Host)
+>* [Deleted](#deleted) via [Delete Experience](#delete-experience) (Host)
+>
+> If `booked: true`
+>
+>* [Booked](#booked) via [Publish Experience](#publish-experience) (Host)
+>* [Archived](#archived) via [Archive Experience](#archive-experience) (Host)
 
-### Approved
-
-This is an approved Experience that is visible in the marketplace.
-
-    _details: {
-        published: true,
-        approved: true,
-        booked: false,
-        archived: false,
-        deleted: false
-    }
-
-Can transition to [Published](#published), [Unpublished](#unpublished), [Booked](#booked), or [Deleted](#deleted)
-
-### Booked
-
-    _details: {
-        published: true,
-        approved: true,
-        booked: true,
-        archived: false,
-        deleted: false
-    }
-
-Can transition to [Unpublished](#unpublished), or [Archived](#archived)
 
 ### Archived
+
+This is an _Approved_ and _Booked_ _Experience_ which has been permanently removed from the marketplace and from the _Hosts_ dashboard but is still referenceable for any existing bookings.
 
     _details: {
         published: [true|false],
@@ -111,6 +142,8 @@ Can transition to [Unpublished](#unpublished), or [Archived](#archived)
 Terminal state.
 
 ### Deleted
+
+This is an _Experience_ which was never _Booked_ which has been permanently removed from the marketplace and the _Hosts_ dashboard.
 
     _details: {
         published: [true|false],
@@ -311,4 +344,3 @@ This is only available while `_details.booking: false`
 > no options
 
 **Response:**
-
