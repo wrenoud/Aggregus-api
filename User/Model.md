@@ -1,4 +1,4 @@
-```javascript
+```JSON
 UserSchema = new mongoose.Schema({
     _id: String,
     _details: {
